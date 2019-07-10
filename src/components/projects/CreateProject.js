@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import { compose } from 'redux';
 import { createProject } from '../../store/actions/projectActions';
 
 class CreateProject extends Component {
@@ -14,6 +16,11 @@ class CreateProject extends Component {
     e.preventDefault();
     // console.log(this.state);
     this.props.createProject(this.state);
+    this.props.history.push('/');
+    this.setState({
+      title: '',
+      content: ''
+    });
   };
   render() {
     return (
@@ -22,7 +29,12 @@ class CreateProject extends Component {
           <h5 className='grey-text text-darken-3'>Create New Project</h5>
           <div className='input-field'>
             <label htmlFor='title'>Title</label>
-            <input type='text' id='title' onChange={this.handleChange} />
+            <input
+              type='text'
+              id='title'
+              onChange={this.handleChange}
+              value={this.state.title}
+            />
           </div>
           <div className='input-field'>
             <label htmlFor='content'>Project Content</label>
@@ -30,6 +42,7 @@ class CreateProject extends Component {
               className='materialize-textarea'
               id='content'
               onChange={this.handleChange}
+              value={this.state.content}
             />
           </div>
           <div className='input-field'>
@@ -48,7 +61,10 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
+export default compose(
+  connect(
+    null,
+    mapDispatchToProps
+  ),
+  withRouter
 )(CreateProject);

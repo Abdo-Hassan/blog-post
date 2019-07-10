@@ -43,6 +43,7 @@ class CreateProject extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
+    //function : ()=> dispatch(action)
     createProject: project => dispatch(createProject(project))
   };
 };

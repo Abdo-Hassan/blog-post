@@ -1,2 +1,2 @@
-# react-project-management
-react-project-management
+# react-project-manager
+react-project-manager

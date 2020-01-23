@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
+import '../../App.css';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
 
@@ -15,7 +16,7 @@ const Navbar = props => {
   return (
     <nav className='nav wrapper grey darken-3'>
       <div className='container'>
-        <Link to='/' className='brand-logo'>
+        <Link to='/' className='logo'>
           Project Manager
         </Link>
         {links}

@@ -30,3 +30,28 @@ textarea.materialize-textarea:focus:not([readonly]) {
   border-color: #ec407a;
   box-shadow: none;
 }
+
+.logo {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    font-size: 17px;
+  }
+  .hidden {
+    display: none;
+  }
+  .new-project {
+    padding: 0;
+  }
+  .logout {
+    padding-right: 0;
+  }
+  .card-content-mobile {
+    padding: 13px 15px !important;
+  }
+  .card-title-mobile {
+    font-size: 21px !important;
+  }
+}

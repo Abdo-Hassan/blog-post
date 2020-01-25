@@ -5,16 +5,18 @@ import { signOut } from '../../store/actions/authActions';
 
 const SignedInLinks = props => {
   return (
-    <ul className='right'>
+    <ul>
       <li>
-        <NavLink to='/create'>New Project</NavLink>
-      </li>
-      <li>
-        <NavLink to='/' onClick={props.signOut}>
-          Log Out
+        <NavLink to='/create' className='new-project'>
+          New Project
         </NavLink>
       </li>
       <li>
+        <NavLink to='/' onClick={props.signOut} className='logout'>
+          Log Out
+        </NavLink>
+      </li>
+      <li className='hidden'>
         <NavLink to='/' className='btn btn-floating pink lignten-1'>
           {props.profile.initials}
         </NavLink>
@@ -29,7 +31,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(SignedInLinks);
+export default connect(null, mapDispatchToProps)(SignedInLinks);

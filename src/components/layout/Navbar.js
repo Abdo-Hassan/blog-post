@@ -15,7 +15,10 @@ const Navbar = props => {
   );
   return (
     <nav className='nav wrapper grey darken-3'>
-      <div className='container'>
+      <div
+        className='container'
+        style={{ display: 'flex', justifyContent: 'space-between' }}
+      >
         <Link to='/' className='logo'>
           Project Manager
         </Link>

@@ -6,7 +6,7 @@ const Notifications = props => {
   return (
     <div className='section'>
       <div className='card z-depth-0'>
-        <div className='card-content'>
+        <div className='card-content card-content-mobile'>
           <span className='card-title'>Notifications</span>
           <ul className='notifications'>
             {notifications &&

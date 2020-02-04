@@ -44,7 +44,6 @@ class SignIn extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     authError: state.auth.authError,
     auth: state.firebase.auth
@@ -57,7 +56,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignIn);
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

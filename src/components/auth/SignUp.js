@@ -15,7 +15,6 @@ class SignUp extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.props.signUp(this.state);
   };
   render() {
@@ -55,7 +54,6 @@ class SignUp extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     authError: state.auth.authError,
     auth: state.firebase.auth
@@ -68,7 +66,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

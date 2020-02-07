@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import Loading from '../../loading/Loading';
 
 const Notifications = ({ notifications }) => {
   return (
@@ -8,9 +9,7 @@ const Notifications = ({ notifications }) => {
         <div className='card-content card-content-mobile'>
           <span className='card-title'>Notifications</span>
           {notifications === undefined || notifications.length === 0 ? (
-            <span className='card-title' style={{ color: '#E91E63' }}>
-              There is No Notifications Yet !
-            </span>
+            <Loading />
           ) : (
             <ul className='notifications'>
               {notifications &&

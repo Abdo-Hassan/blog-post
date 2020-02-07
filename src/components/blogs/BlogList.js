@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import BlogSummary from './BlogSummary';
 import { Link } from 'react-router-dom';
 const BlogList = ({ blogs }) => {
-  console.log(blogs);
   return (
     <Fragment>
       {blogs === undefined || blogs.length === 0 ? (

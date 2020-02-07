@@ -42,7 +42,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   .hidden {
     display: none;
   }
-  .new-project {
+  .new-blog {
     padding: 0;
   }
   .logout {

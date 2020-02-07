@@ -19,7 +19,7 @@ const Navbar = props => {
         style={{ display: 'flex', justifyContent: 'space-between' }}
       >
         <Link to='/' className='logo'>
-          Project Manager
+          Blog Post
         </Link>
         {links}
       </div>

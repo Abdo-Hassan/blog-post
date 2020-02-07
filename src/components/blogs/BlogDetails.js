@@ -5,24 +5,22 @@ import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 import moment from 'moment';
 
-const ProjectDetails = props => {
-  const { project, auth } = props;
+const BlogDetails = props => {
+  const { blog, auth } = props;
   if (!auth.uid) return <Redirect to='/signin' />;
-  if (project) {
+  if (blog) {
     return (
-      <div className='container section project-details' key={project.id}>
+      <div className='container section blog-details' key={blog.id}>
         <div className='card z-depth-0'>
           <div className='card-content card-content-mobile'>
-            <span className='card-title'>{project.title}</span>
-            <p>{project.content}</p>
+            <span className='card-title'>{blog.title}</span>
+            <p>{blog.content}</p>
           </div>
           <div className='card-action grey lighten-4 grey-text'>
             <div>
-              Posted By : {project.authorFirstName} {project.authorLastName}
+              Posted By : {blog.authorFirstName} {blog.authorLastName}
             </div>
-            <div>
-              {moment(project.createdAt.toDate().toString()).calendar()}
-            </div>
+            <div>{moment(blog.createdAt.toDate().toString()).calendar()}</div>
           </div>
         </div>
       </div>
@@ -30,7 +28,7 @@ const ProjectDetails = props => {
   } else {
     return (
       <div className='container center'>
-        <p>Loading Project</p>
+        <p>Loading Blog</p>
       </div>
     );
   }
@@ -38,10 +36,10 @@ const ProjectDetails = props => {
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
-  const projects = state.firestore.data.projects;
-  const project = projects ? projects[id] : null;
+  const blogs = state.firestore.data.blogs;
+  const blog = blogs ? blogs[id] : null;
   return {
-    project: project,
+    blog: blog,
     auth: state.firebase.auth
   };
 };
@@ -50,7 +48,7 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     {
-      collection: 'projects'
+      collection: 'blogs'
     }
   ])
-)(ProjectDetails);
+)(BlogDetails);

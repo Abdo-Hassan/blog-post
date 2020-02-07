@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { createProject } from '../../store/actions/projectActions';
+import { createBlog } from '../../store/actions/blogActions';
 import { Redirect } from 'react-router-dom';
 
-class CreateProject extends Component {
+class CreateBlog extends Component {
   state = {
     title: '',
     content: ''
@@ -15,8 +15,7 @@ class CreateProject extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    // console.log(this.state);
-    this.props.createProject(this.state);
+    this.props.createBlog(this.state);
     this.props.history.push('/');
     this.setState({
       title: '',
@@ -29,7 +28,7 @@ class CreateProject extends Component {
     return (
       <div className='container'>
         <form onSubmit={this.handleSubmit} className='white'>
-          <h5 className='grey-text text-darken-3'>Create New Project</h5>
+          <h5 className='grey-text text-darken-3'>Create New Blog</h5>
           <div className='input-field'>
             <label htmlFor='title'>Title</label>
             <input
@@ -40,7 +39,7 @@ class CreateProject extends Component {
             />
           </div>
           <div className='input-field'>
-            <label htmlFor='content'>Project Content</label>
+            <label htmlFor='content'>Blog Content</label>
             <textarea
               className='materialize-textarea'
               id='content'
@@ -65,15 +64,11 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => {
   return {
-    //function : ()=> dispatch(action)
-    createProject: project => dispatch(createProject(project))
+    createBlog: blog => dispatch(createBlog(blog))
   };
 };
 
 export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   withRouter
-)(CreateProject);
+)(CreateBlog);

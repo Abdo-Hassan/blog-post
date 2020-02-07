@@ -7,7 +7,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateBlog from './components/blogs/CreateBlog';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <div className='App'>
@@ -22,6 +22,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

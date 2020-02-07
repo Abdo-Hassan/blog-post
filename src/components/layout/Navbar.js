@@ -13,7 +13,7 @@ const Navbar = props => {
     <SignedOutLinks />
   );
   return (
-    <nav className='nav wrapper grey darken-3'>
+    <nav className='nav wrapper' style={{ backgroundColor: '#4242429c' }}>
       <div
         className='container'
         style={{ display: 'flex', justifyContent: 'space-between' }}

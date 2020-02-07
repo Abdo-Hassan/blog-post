@@ -2,8 +2,8 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
-const createNotification = notification => {
-  return admin
+const createNotification = async notification => {
+  return await admin
     .firestore()
     .collection('notifications')
     .add(notification)
@@ -22,8 +22,8 @@ exports.blogCreated = functions.firestore
     return createNotification(notification);
   });
 
-exports.userJoined = functions.auth.user().onCreate(user => {
-  return admin
+exports.userJoined = functions.auth.user().onCreate(async user => {
+  return await admin
     .firestore()
     .collection('users')
     .doc(user.uid)

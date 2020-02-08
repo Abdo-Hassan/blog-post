@@ -36,6 +36,7 @@ class CreateBlog extends Component {
               id='title'
               onChange={this.handleChange}
               value={this.state.title}
+              required
             />
           </div>
           <div className='input-field'>
@@ -45,6 +46,7 @@ class CreateBlog extends Component {
               id='content'
               onChange={this.handleChange}
               value={this.state.content}
+              required
             />
           </div>
           <div className='input-field'>

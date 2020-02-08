@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
 }
 
-.App {
+#root {
   position: relative;
   width: 100%;
   height: 100%;

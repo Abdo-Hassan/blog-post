@@ -46,6 +46,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
   border-radius: 50%;
 }
 
+.posts-title {
+  color: #fff;
+}
+
 @media screen and (max-width: 500px) {
   .logo {
     font-size: 17px;

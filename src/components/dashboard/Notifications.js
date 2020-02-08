@@ -5,12 +5,12 @@ import Loading from '../../loading/Loading';
 const Notifications = ({ notifications }) => {
   return (
     <div className='section'>
-      <div className='card z-depth-0'>
-        <div className='card-content card-content-mobile'>
-          <span className='card-title'>Notifications</span>
-          {notifications === undefined || notifications.length === 0 ? (
-            <Loading />
-          ) : (
+      <h5 className='posts-title'>Notifications</h5>
+      {notifications === undefined || notifications.length === 0 ? (
+        <Loading />
+      ) : (
+        <div className='card z-depth-0'>
+          <div className='card-content card-content-mobile'>
             <ul className='notifications'>
               {notifications &&
                 notifications.map(item => {
@@ -27,9 +27,9 @@ const Notifications = ({ notifications }) => {
                   );
                 })}
             </ul>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

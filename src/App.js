@@ -11,14 +11,16 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/blog/:id' component={BlogDetails} />
-          <Route path='/signin' component={SignIn} />
-          <Route path='/signup' component={SignUp} />
-          <Route path='/create' component={CreateBlog} />
-        </Switch>
+        <div className='overlay'>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            <Route path='/blog/:id' component={BlogDetails} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/create' component={CreateBlog} />
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   );
